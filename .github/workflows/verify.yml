@@ -1,0 +1,38 @@
+name: Verify baseline
+on:
+  push:
+    branches: [master]
+  pull_request:
+permissions:
+  contents: read
+concurrency:
+  group: verify-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  go:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.27.x'
+          cache: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Formatting, static checks and tests
+        run: |
+          test -z "$(gofmt -l *.go)"
+          go vet ./...
+          go test -race -cover ./...
+          node --check static/app.js
+          CGO_ENABLED=0 go build -trimpath -o portal .
+          python3 scripts/smoke.py
+  compose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Compose and test container persistence
+        run: |
+          docker compose config --quiet
+          python3 scripts/smoke.py --compose

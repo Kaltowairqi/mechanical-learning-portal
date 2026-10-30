@@ -1,0 +1,573 @@
+{
+  "title": "Helicopter Engineering",
+  "version": 1,
+  "description": "A staged helicopter engineering curriculum outline with manual assessment and a conceptual design capstone. Detailed teaching materials and resource verification remain in development.",
+  "stages": [
+    {
+      "id": "S1",
+      "name": "Foundations",
+      "description": "Mathematics, physics and engineering foundations",
+      "hours": 350,
+      "modules": [
+        {
+          "id": "S1M1",
+          "title": "Calculus and differential equations",
+          "hours": 55,
+          "resources": "Stewart, Calculus: Early Transcendentals — differentiation, integration, multivariable calculus; MIT OCW 18.03SC — first- and second-order ODEs",
+          "criteria": "Derive velocity and acceleration from position, solve a damped second-order ODE, and validate RK4 against an analytical solution.",
+          "prerequisites": [],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        },
+        {
+          "id": "S1M2",
+          "title": "Linear algebra and coordinate frames",
+          "hours": 45,
+          "resources": "Strang, Introduction to Linear Algebra — matrices, transformations, eigenvalues; MIT OCW 18.06",
+          "criteria": "Implement body-to-inertial transformations; verify orthogonality and solve a 2-DOF eigenvalue problem.",
+          "prerequisites": [
+            "S1M1"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        },
+        {
+          "id": "S1M3",
+          "title": "Statics and free-body diagrams",
+          "hours": 80,
+          "resources": "Hibbeler, Engineering Mechanics: Statics — forces, moments, equilibrium, distributed loads, centroids",
+          "criteria": "Draw correct free-body diagrams; calculate support reactions, forces, and moments for a rotor support.",
+          "prerequisites": [
+            "S1M2"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        },
+        {
+          "id": "S1M4",
+          "title": "Rigid-body dynamics",
+          "hours": 80,
+          "resources": "Hibbeler, Engineering Mechanics: Dynamics — particle and rigid-body kinematics, kinetics, energy and momentum",
+          "criteria": "Derive rotor inertia and angular momentum; solve torque-driven angular acceleration and gyroscopic moment problems.",
+          "prerequisites": [
+            "S1M3"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        },
+        {
+          "id": "S1M5",
+          "title": "Numerical methods and uncertainty",
+          "hours": 90,
+          "resources": "Kreyszig, Advanced Engineering Mathematics — numerical ODEs, linear systems and error analysis",
+          "criteria": "Implement a stable integration solver, demonstrate timestep convergence, quantify sensitivity and unit consistency.",
+          "prerequisites": [
+            "S1M4"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        }
+      ]
+    },
+    {
+      "id": "S2",
+      "name": "Mechanical Engineering",
+      "description": "Mechanics, machine design and materials",
+      "hours": 500,
+      "modules": [
+        {
+          "id": "S2M1",
+          "title": "Strength of materials",
+          "hours": 95,
+          "resources": "Hibbeler, Mechanics of Materials — stress, strain, torsion, bending, combined loading, beam deflection and buckling",
+          "criteria": "Size a tail-drive shaft for torque and bending and calculate stress, deflection, and margin against an assumed allowable.",
+          "prerequisites": [
+            "S1M5"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        },
+        {
+          "id": "S2M2",
+          "title": "Machine elements and fatigue",
+          "hours": 130,
+          "resources": "Shigley’s Mechanical Engineering Design — loads, failure, fatigue, shafts, fasteners, springs and bearings",
+          "criteria": "Design a two-stage gearbox with shaft sizing, bearing life, bolted connections, fatigue calculations and justified safety factors.",
+          "prerequisites": [
+            "S2M1"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        },
+        {
+          "id": "S2M3",
+          "title": "Gears, lubrication and tribology",
+          "hours": 65,
+          "resources": "Shigley — chapters on gears, gear trains and lubrication; Dudley’s Handbook of Practical Gear Design",
+          "criteria": "Calculate gear ratios, forces, torque, efficiencies and a preliminary gear failure margin; document lubrication assumptions.",
+          "prerequisites": [
+            "S2M2"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        },
+        {
+          "id": "S2M4",
+          "title": "Materials, fracture and composites",
+          "hours": 90,
+          "resources": "Callister, Materials Science and Engineering — mechanical properties, failure, heat treatment; Jones, Mechanics of Composite Materials — laminate mechanics",
+          "criteria": "Compare steel, titanium, aluminum and laminate candidates; calculate a laminate stiffness example and a simplified crack stress intensity.",
+          "prerequisites": [
+            "S2M3"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        },
+        {
+          "id": "S2M5",
+          "title": "Thermodynamics and heat transfer",
+          "hours": 60,
+          "resources": "Moran et al., Fundamentals of Engineering Thermodynamics — control volumes and cycles; Incropera, Fundamentals of Heat and Mass Transfer — conduction/convection",
+          "criteria": "Close a simplified turboshaft energy balance and estimate gearbox oil cooling load.",
+          "prerequisites": [
+            "S2M4"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        },
+        {
+          "id": "S2M6",
+          "title": "Fluid mechanics and vibration",
+          "hours": 60,
+          "resources": "White, Fluid Mechanics — conservation, pipe losses and dimensional analysis; Rao, Mechanical Vibrations — SDOF forced response and resonance",
+          "criteria": "Compute a hydraulic pressure drop, a resonance frequency and damping response for a simple rotating assembly.",
+          "prerequisites": [
+            "S2M5"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        }
+      ]
+    },
+    {
+      "id": "S3",
+      "name": "CAD and Manufacturing",
+      "description": "Parametric CAD, drawings, tolerancing and FEA",
+      "hours": 300,
+      "modules": [
+        {
+          "id": "S3M1",
+          "title": "SolidWorks parts and design intent",
+          "hours": 55,
+          "resources": "SOLIDWORKS official training — Getting Started, Sketches and Parts; Planchard, Engineering Design with SOLIDWORKS — part modeling",
+          "criteria": "Create ten fully constrained, editable parts; modify master dimensions without broken features.",
+          "prerequisites": [
+            "S2M6"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        },
+        {
+          "id": "S3M2",
+          "title": "Assemblies and motion",
+          "hours": 65,
+          "resources": "SOLIDWORKS training — Assemblies and Mates; Planchard — assembly and motion lessons",
+          "criteria": "Build a kinematically valid swashplate assembly; demonstrate collective and cyclic motion without collisions.",
+          "prerequisites": [
+            "S3M1"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        },
+        {
+          "id": "S3M3",
+          "title": "Engineering drawings and GD&T",
+          "hours": 60,
+          "resources": "Giesecke, Technical Drawing with Engineering Graphics — sections on dimensions, sections and tolerances; ASME Y14.5",
+          "criteria": "Produce manufacturing drawings with datum system, fits and a quantitative tolerance stack.",
+          "prerequisites": [
+            "S3M2"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        },
+        {
+          "id": "S3M4",
+          "title": "Manufacturing and inspection",
+          "hours": 55,
+          "resources": "Kalpakjian and Schmid, Manufacturing Engineering and Technology — machining, forming, casting, joining and metrology",
+          "criteria": "Select processes and inspection plans for five parts, identifying critical dimensions, tooling constraints and cost drivers.",
+          "prerequisites": [
+            "S3M3"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        },
+        {
+          "id": "S3M5",
+          "title": "Finite element analysis",
+          "hours": 65,
+          "resources": "Logan, A First Course in the Finite Element Method — bar/beam elements and assembly; SOLIDWORKS Simulation tutorials",
+          "criteria": "Derive an element stiffness matrix, compare cantilever FEA against beam theory and demonstrate mesh convergence.",
+          "prerequisites": [
+            "S3M4"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        }
+      ]
+    },
+    {
+      "id": "S4",
+      "name": "Rotorcraft Aerodynamics",
+      "description": "Hover, blade aerodynamics, forward flight and wake",
+      "hours": 500,
+      "modules": [
+        {
+          "id": "S4M1",
+          "title": "Helicopter systems and controls",
+          "hours": 50,
+          "resources": "FAA Helicopter Flying Handbook — helicopter fundamentals, aerodynamics, controls, components and weight and balance (edition and reading locations require verification)",
+          "criteria": "Explain controls, major components, induced flow, autorotation and CG effects; solve a weight-and-balance exercise.",
+          "prerequisites": [
+            "S3M5"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        },
+        {
+          "id": "S4M2",
+          "title": "Airfoil aerodynamics",
+          "hours": 95,
+          "resources": "Anderson, Fundamentals of Aerodynamics — airfoils, viscous effects, compressibility; Leishman — airfoil characteristics",
+          "criteria": "Compute sectional lift/drag, Reynolds and Mach numbers at blade stations and explain stall and compressibility constraints.",
+          "prerequisites": [
+            "S4M1"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        },
+        {
+          "id": "S4M3",
+          "title": "Momentum theory and hover performance",
+          "hours": 85,
+          "resources": "Leishman, Principles of Helicopter Aerodynamics, 2nd ed. — hovering rotor momentum theory; Johnson, Helicopter Theory — hover performance",
+          "criteria": "Derive ideal induced power P=T^(3/2)/sqrt(2 rho A); compare rotor sizes and density altitudes and state omitted losses.",
+          "prerequisites": [
+            "S4M2"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        },
+        {
+          "id": "S4M4",
+          "title": "Blade element and BEMT",
+          "hours": 110,
+          "resources": "Leishman — blade element theory and blade element momentum theory",
+          "criteria": "Implement radial-element integration yielding thrust, torque, power and spanwise loading; perform convergence and sensitivity checks.",
+          "prerequisites": [
+            "S4M3"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        },
+        {
+          "id": "S4M5",
+          "title": "Forward flight and trim",
+          "hours": 100,
+          "resources": "Leishman — forward flight, induced velocity and flapping; Padfield, Helicopter Flight Dynamics — trim",
+          "criteria": "Calculate advance ratio and azimuthal velocity; formulate a simplified forward-flight trim with explicitly stated modeling limits.",
+          "prerequisites": [
+            "S4M4"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        },
+        {
+          "id": "S4M6",
+          "title": "Unsteady aerodynamics and autorotation",
+          "hours": 60,
+          "resources": "Leishman — rotor wake, unsteady aerodynamics and autorotation",
+          "criteria": "Explain dynamic inflow, vortex effects and power flow during autorotation; implement one simplified dynamic-response case.",
+          "prerequisites": [
+            "S4M5"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        }
+      ]
+    },
+    {
+      "id": "S5",
+      "name": "Helicopter Mechanical Systems",
+      "description": "Rotor, transmission, propulsion and airframe",
+      "hours": 500,
+      "modules": [
+        {
+          "id": "S5M1",
+          "title": "Blade structures and aeroelasticity",
+          "hours": 110,
+          "resources": "Johnson, Helicopter Theory — rotor blade dynamics; Hodges & Pierce, Introduction to Structural Dynamics and Aeroelasticity — vibration and flutter",
+          "criteria": "Compute centrifugal and bending loads, modal frequencies and distinguish structural resonance from aeroelastic instability.",
+          "prerequisites": [
+            "S4M6"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        },
+        {
+          "id": "S5M2",
+          "title": "Rotor hub and swashplate",
+          "hours": 90,
+          "resources": "Johnson — rotor kinematics and hub dynamics; FAA Helicopter Flying Handbook — components and controls (edition and reading locations require verification)",
+          "criteria": "Model blade flapping, lead-lag and feathering; produce an articulated conceptual swashplate with motion-envelope checks.",
+          "prerequisites": [
+            "S5M1"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        },
+        {
+          "id": "S5M3",
+          "title": "Main gearbox and rotor drive",
+          "hours": 100,
+          "resources": "Shigley — gears, shafts, bearings, fatigue; Dudley — practical gear design",
+          "criteria": "Calculate drive ratios, gear and shaft loads, bearing life and thermal demands; document lubrication and key failure paths.",
+          "prerequisites": [
+            "S5M2"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        },
+        {
+          "id": "S5M4",
+          "title": "Tail rotor and anti-torque drive",
+          "hours": 60,
+          "resources": "Leishman — rotor performance; Johnson — helicopter trim and anti-torque systems",
+          "criteria": "Calculate main-rotor reaction torque, tail thrust at given moment arm, and tail drive power with sensitivity analysis.",
+          "prerequisites": [
+            "S5M3"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        },
+        {
+          "id": "S5M5",
+          "title": "Turboshaft and engine integration",
+          "hours": 70,
+          "resources": "Saravanamuttoo et al., Gas Turbine Theory — Brayton cycle and turboshaft components; Farokhi, Aircraft Propulsion",
+          "criteria": "Analyze an ideal Brayton cycle, estimate power variation and create a conceptual engine/rotor power budget.",
+          "prerequisites": [
+            "S5M4"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        },
+        {
+          "id": "S5M6",
+          "title": "Fuselage, landing gear and hydraulics",
+          "hours": 70,
+          "resources": "Megson, Aircraft Structures for Engineering Students — load paths and buckling; Esposito, Fluid Power with Applications — hydraulic circuits",
+          "criteria": "Develop preliminary fuselage load paths, simplified landing impact energy analysis and actuator pressure/flow calculations.",
+          "prerequisites": [
+            "S5M5"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        }
+      ]
+    },
+    {
+      "id": "S6",
+      "name": "Dynamics and Avionics",
+      "description": "Flight dynamics, estimation and embedded control",
+      "hours": 400,
+      "modules": [
+        {
+          "id": "S6M1",
+          "title": "Rigid body flight dynamics and stability",
+          "hours": 110,
+          "resources": "Padfield, Helicopter Flight Dynamics — trim, stability and handling qualities; Nelson, Flight Stability and Automatic Control — equations of motion",
+          "criteria": "Derive 6-DOF equations, linearize about a trim point, calculate eigenvalues and simulate disturbance response.",
+          "prerequisites": [
+            "S5M6"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        },
+        {
+          "id": "S6M2",
+          "title": "Feedback and digital control",
+          "hours": 90,
+          "resources": "Franklin et al., Feedback Control of Dynamic Systems — PID, state-space, frequency response; MIT 16.333 notes",
+          "criteria": "Design a simulated rotor-speed controller with anti-windup; evaluate poles, stability margin and response metrics.",
+          "prerequisites": [
+            "S6M1"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        },
+        {
+          "id": "S6M3",
+          "title": "Sensors and Kalman filtering",
+          "hours": 80,
+          "resources": "Grewal & Andrews, Kalman Filtering: Theory and Practice — filtering; MIT 16.333 sensor estimation notes",
+          "criteria": "Implement complementary and Kalman filters using simulated IMU data; report drift and estimation errors.",
+          "prerequisites": [
+            "S6M2"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        },
+        {
+          "id": "S6M4",
+          "title": "Embedded real-time avionics",
+          "hours": 70,
+          "resources": "Liu, Real-Time Systems — scheduling and synchronization; Franklin et al., Digital Control of Dynamic Systems",
+          "criteria": "Specify a deterministic sensor/control task schedule, watchdog policy, fault model and timing tests.",
+          "prerequisites": [
+            "S6M3"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        },
+        {
+          "id": "S6M5",
+          "title": "Integrated simulation",
+          "hours": 50,
+          "resources": "Padfield — nonlinear flight models; relevant MIT 16.333 exercises",
+          "criteria": "Create a simulation-only helicopter model with sensor noise, disturbances and fault-injection tests.",
+          "prerequisites": [
+            "S6M4"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        }
+      ]
+    },
+    {
+      "id": "S7",
+      "name": "Safety and Certification",
+      "description": "Requirements, hazard assessment and airworthiness",
+      "hours": 250,
+      "modules": [
+        {
+          "id": "S7M1",
+          "title": "Systems engineering and traceability",
+          "hours": 75,
+          "resources": "NASA Systems Engineering Handbook — requirements, architecture, verification; Kossiakoff et al., Systems Engineering Principles and Practice",
+          "criteria": "Create a requirements-to-test matrix covering helicopter-level needs and subsystem interfaces.",
+          "prerequisites": [
+            "S6M5"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        },
+        {
+          "id": "S7M2",
+          "title": "Reliability and safety assessment",
+          "hours": 85,
+          "resources": "Bahr, System Safety Engineering and Risk Assessment — FMEA and fault trees; SAE ARP4761A",
+          "criteria": "Perform an initial functional hazard assessment, FMEA and fault tree for selected systems; close major critical logic gaps.",
+          "prerequisites": [
+            "S7M1"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        },
+        {
+          "id": "S7M3",
+          "title": "Regulatory framework and compliance",
+          "hours": 90,
+          "resources": "14 CFR Part 27; FAA AC 27-1; 14 CFR Part 29 for comparison — applicability, current revisions and reading locations require verification",
+          "criteria": "Map ten relevant requirements to conceptual compliance evidence and identify unresolved certification work.",
+          "prerequisites": [
+            "S7M2"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        }
+      ]
+    },
+    {
+      "id": "S8",
+      "name": "Helicopter Capstone",
+      "description": "Complete light-helicopter preliminary design",
+      "hours": 400,
+      "modules": [
+        {
+          "id": "S8M1",
+          "title": "Mission requirements and architecture",
+          "hours": 45,
+          "resources": "Capstone specification and NASA Systems Engineering Handbook",
+          "criteria": "Define a two-seat 700 kg illustrative design brief with budgets, assumptions, requirements and traceability.",
+          "prerequisites": [
+            "S7M3"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        },
+        {
+          "id": "S8M2",
+          "title": "Rotor preliminary sizing",
+          "hours": 70,
+          "resources": "Leishman and Johnson; your validated BEMT notebook",
+          "criteria": "Produce disk area, blade geometry, rpm and hover/forward-performance estimates with assumptions and sensitivities.",
+          "prerequisites": [
+            "S8M1"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        },
+        {
+          "id": "S8M3",
+          "title": "Powertrain and rotor system CAD",
+          "hours": 95,
+          "resources": "Shigley, Dudley, Johnson; SOLIDWORKS assemblies",
+          "criteria": "Produce main transmission and rotor hub CAD with kinematic checks, loads and bill of materials.",
+          "prerequisites": [
+            "S8M2"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        },
+        {
+          "id": "S8M4",
+          "title": "Airframe and integration",
+          "hours": 65,
+          "resources": "Megson and Kalpakjian; SOLIDWORKS assembly and drawing tools",
+          "criteria": "Integrate equipment envelopes and fuselage load paths, create key drawings and check fit, CG and major interferences.",
+          "prerequisites": [
+            "S8M3"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        },
+        {
+          "id": "S8M5",
+          "title": "Controls and system simulation",
+          "hours": 55,
+          "resources": "Padfield, Franklin; previous flight dynamics models",
+          "criteria": "Demonstrate simulated trim, stabilization and fault response, recording limitations.",
+          "prerequisites": [
+            "S8M4"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        },
+        {
+          "id": "S8M6",
+          "title": "Independent design review",
+          "hours": 70,
+          "resources": "NASA Systems Engineering Handbook; 14 CFR Part 27; all prior deliverables",
+          "criteria": "Publish a reproducible design dossier, verification matrix, hazard register, open-issues register and review resolution record.",
+          "prerequisites": [
+            "S8M5"
+          ],
+          "assessment": "Submit worked calculations and a practical deliverable; score at least 80% on a reviewed problem set and resolve all critical rubric errors.",
+          "resourcesVerification": "requires_verification"
+        }
+      ]
+    }
+  ]
+}
