@@ -1,6 +1,6 @@
 # Prioritized roadmap and backlog
 
-Status: baseline implementation prepared on `verified-baseline`. These are planned increments, not claims that the full learning program exists. Each milestone should be a separate reviewable PR; keep stable module IDs and back up learner data before data changes.
+Status: baseline implemented on `verified-baseline`, with native checks and both GitHub Actions jobs passing; [PR #1](https://github.com/Kaltowairqi/mechanical-learning-portal/pull/1) awaits review. These are planned increments, not claims that the full learning program exists. Each milestone should be a separate reviewable PR; keep stable module IDs and back up learner data before data changes.
 
 | Priority / milestone | Scope | Acceptance criteria |
 | --- | --- | --- |

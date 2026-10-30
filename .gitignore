@@ -12,3 +12,7 @@
 /portal.exe
 /coverage.out
 .DS_Store
+
+# Python smoke-check caches
+__pycache__/
+*.py[cod]
