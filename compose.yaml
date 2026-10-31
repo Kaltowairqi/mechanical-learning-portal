@@ -1,0 +1,15 @@
+services:
+  portal:
+    build: .
+    ports:
+      - "127.0.0.1:${PORT:-3000}:3000"
+    volumes:
+      - portal-data:/app/data
+    restart: unless-stopped
+    init: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+volumes:
+  portal-data:

@@ -1,0 +1,18 @@
+# Personal progress and backups
+/data/*
+!/data/.gitkeep
+/backups/
+*.tmp
+# Local configuration (the example is safe to commit)
+.env
+.env.*
+!.env.example
+# Build and verification output
+/portal
+/portal.exe
+/coverage.out
+.DS_Store
+
+# Python smoke-check caches
+__pycache__/
+*.py[cod]
